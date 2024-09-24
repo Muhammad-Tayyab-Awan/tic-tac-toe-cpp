@@ -19,9 +19,9 @@ public:
     }
     void setPlayers()
     {
-        cout << "Enter Player " << 1 << " Name Here : ";
+        cout << "\n\n\t\tEnter Player " << 1 << " Name Here : ";
         getline(cin, P1_Name);
-        cout << "Enter Player " << 2 << " Name Here : ";
+        cout << "\n\n\t\tEnter Player " << 2 << " Name Here : ";
         getline(cin, P2_Name);
     }
     int toss()
@@ -55,10 +55,6 @@ public:
                     break;
                 }
             }
-            else
-            {
-                // empty else condition
-            }
         }
         for (int i = 0; i < p2Length; i++)
         {
@@ -82,10 +78,6 @@ public:
                     p2constonants++;
                     break;
                 }
-            }
-            else
-            {
-                // empty else condition
             }
         }
         if (p1vowels > p2vowels)
@@ -115,13 +107,13 @@ public:
         {
             tossWPlayer = P1_Name;
             tossLPlayer = P2_Name;
-            cout << "Toss Winned By : " << tossWPlayer << endl;
+            cout << "\n\n\t\tToss Winned By : " << tossWPlayer << endl;
         }
         else
         {
             tossWPlayer = P2_Name;
             tossLPlayer = P1_Name;
-            cout << "Toss Winned By : " << tossWPlayer << endl;
+            cout << "\n\n\t\tToss Winned By : " << tossWPlayer << endl;
         }
         return tossWPlayer;
     }
@@ -140,10 +132,26 @@ int checkBoard(char board[])
     {
         return 1;
     }
+    else
+    {
+        int drawCheck = 0;
+        for (int i = 0; i < 9; i++)
+        {
+            if (board[i] == 'X' || board[i] == 'O')
+            {
+                drawCheck++;
+            }
+        }
+        if (drawCheck == 9)
+        {
+            return 3;
+        }
+    }
     return 0;
 }
 void playGame(string PlayerNo1, string PlayerNo2, char board[])
 {
+    system("cls");
     int turnInput, checkresult = 0;
     while (checkresult == 0)
     {
@@ -192,11 +200,13 @@ void playGame(string PlayerNo1, string PlayerNo2, char board[])
             }
         }
         checkresult = checkBoard(board);
-        if (checkresult == 1)
+        if (checkresult > 0)
         {
-            continue;
+            break;
         }
-        cout << "\n\n\t\tIt's Your Turn : " << PlayerNo2 << endl;
+        system("cls");
+        cout
+            << "\n\n\t\tIt's Your Turn : " << PlayerNo2 << endl;
         displayBoard(board);
         cout << "\n\n\t\tEnter Here : ";
         cin >> turnInput;
@@ -241,14 +251,19 @@ void playGame(string PlayerNo1, string PlayerNo2, char board[])
             }
         }
         checkresult = checkBoard(board);
+        system("cls");
     }
     if (checkresult == 1)
     {
-        cout << "Winner is " << PlayerNo1 << endl;
+        cout << "\n\n\t\tWinner is " << PlayerNo1 << endl;
     }
-    else
+    else if (checkresult == 2)
     {
-        cout << "Winner is " << PlayerNo2 << endl;
+        cout << "\n\n\t\tWinner is " << PlayerNo2 << endl;
+    }
+    else if (checkresult == 3)
+    {
+        cout << "\n\n\t\tGame Drawn" << endl;
     }
 }
 
