@@ -154,31 +154,94 @@ void playGame(string PlayerNo1, string PlayerNo2, char board[])
         switch (turnInput)
         {
         case 1:
-            board[turnInput - 1] = 'X';
+            if (board[turnInput - 1] == 'X' || board[turnInput - 1] == 'O')
+            {
+                cout << "\n\n\t\tInvalid input\n";
+            }
+            else
+            {
+                board[turnInput - 1] = 'X';
+            }
             break;
         case 2:
-            board[turnInput - 1] = 'X';
+            if (board[turnInput - 1] == 'X' || board[turnInput - 1] == 'O')
+            {
+                cout << "\n\n\t\tInvalid input\n";
+            }
+            else
+            {
+                board[turnInput - 1] = 'X';
+            }
             break;
         case 3:
-            board[turnInput - 1] = 'X';
+            if (board[turnInput - 1] == 'X' || board[turnInput - 1] == 'O')
+            {
+                cout << "\n\n\t\tInvalid input\n";
+            }
+            else
+            {
+                board[turnInput - 1] = 'X';
+            }
             break;
         case 4:
-            board[turnInput - 1] = 'X';
+            if (board[turnInput - 1] == 'X' || board[turnInput - 1] == 'O')
+            {
+                cout << "\n\n\t\tInvalid input\n";
+            }
+            else
+            {
+                board[turnInput - 1] = 'X';
+            }
             break;
         case 5:
-            board[turnInput - 1] = 'X';
+            if (board[turnInput - 1] == 'X' || board[turnInput - 1] == 'O')
+            {
+                cout << "\n\n\t\tInvalid input\n";
+            }
+            else
+            {
+                board[turnInput - 1] = 'X';
+            }
             break;
         case 6:
-            board[turnInput - 1] = 'X';
+            if (board[turnInput - 1] == 'X' || board[turnInput - 1] == 'O')
+            {
+                cout << "\n\n\t\tInvalid input\n";
+            }
+            else
+            {
+                board[turnInput - 1] = 'X';
+            }
             break;
         case 7:
-            board[turnInput - 1] = 'X';
+            if (board[turnInput - 1] == 'X' || board[turnInput - 1] == 'O')
+            {
+                cout << "\n\n\t\tInvalid input\n";
+            }
+            else
+            {
+                board[turnInput - 1] = 'X';
+            }
             break;
         case 8:
-            board[turnInput - 1] = 'X';
+            if (board[turnInput - 1] == 'X' || board[turnInput - 1] == 'O')
+            {
+                cout << "\n\n\t\tInvalid input\n";
+            }
+            else
+            {
+                board[turnInput - 1] = 'X';
+            }
             break;
         case 9:
-            board[turnInput - 1] = 'X';
+            if (board[turnInput - 1] == 'X' || board[turnInput - 1] == 'O')
+            {
+                cout << "\n\n\t\tInvalid input\n";
+            }
+            else
+            {
+                board[turnInput - 1] = 'X';
+            }
             break;
         default:
             cout << "\n\n\t\tInvalid input\n";
