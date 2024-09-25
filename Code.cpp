@@ -197,7 +197,26 @@ void playGame(string PlayerNo1, string PlayerNo2, char board[])
         cout << "\n\n\t\tIt's Your Turn : " << PlayerNo1 << endl;
         displayBoard(board);
         cout << "\n\n\t\tEnter Here : ";
-        cin >> turnInput;
+        bool validInput = false;
+        int check = 0;
+        while (!validInput)
+        {
+            if (check > 0)
+            {
+                cout << "\n\n\t\tEnter Correct Input : ";
+            }
+            cin >> turnInput;
+            if (cin.fail())
+            {
+                check++;
+                cin.clear();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            }
+            else
+            {
+                validInput = true;
+            }
+        }
         if (board[turnInput - 1] == 'X' || board[turnInput - 1] == 'O')
         {
             cout << "\n\n\t\tInvalid input\n";
@@ -248,7 +267,26 @@ void playGame(string PlayerNo1, string PlayerNo2, char board[])
             << "\n\n\t\tIt's Your Turn : " << PlayerNo2 << endl;
         displayBoard(board);
         cout << "\n\n\t\tEnter Here : ";
-        cin >> turnInput;
+        validInput = false;
+        check = 0;
+        while (!validInput)
+        {
+            if (check > 0)
+            {
+                cout << "\n\n\t\tEnter Correct Input : ";
+            }
+            cin >> turnInput;
+            if (cin.fail())
+            {
+                check++;
+                cin.clear();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            }
+            else
+            {
+                validInput = true;
+            }
+        }
         if (board[turnInput - 1] == 'X' || board[turnInput - 1] == 'O')
         {
             cout << "\n\n\t\tInvalid input\n";
