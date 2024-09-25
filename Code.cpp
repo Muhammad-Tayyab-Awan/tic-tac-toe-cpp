@@ -19,10 +19,49 @@ public:
     }
     void setPlayers()
     {
-        cout << "\n\n\t\tEnter Player " << 1 << " Name Here : ";
-        getline(cin, P1_Name);
-        cout << "\n\n\t\tEnter Player " << 2 << " Name Here : ";
-        getline(cin, P2_Name);
+        bool check = false;
+        int again = 0;
+        while (check == false)
+        {
+            if (again > 0)
+            {
+                cout << "\n\n\t\tEnter Player " << 1 << " Name Again Here : ";
+            }
+            else
+            {
+                cout << "\n\n\t\tEnter Player " << 1 << " Name Here : ";
+                again++;
+            }
+            getline(cin, P1_Name);
+            check = InputChecker(P1_Name);
+        }
+        check = false;
+        again = 0;
+        while (check == false)
+        {
+            if (again > 0)
+            {
+                cout << "\n\n\t\tEnter Player " << 2 << " Name Again Here : ";
+            }
+            else
+            {
+                cout << "\n\n\t\tEnter Player " << 2 << " Name Here : ";
+                again++;
+            }
+            getline(cin, P2_Name);
+            check = InputChecker(P2_Name);
+        }
+    }
+    bool InputChecker(string input)
+    {
+        for (int i = 0; i < input.length(); i++)
+        {
+            if (!(isalpha(input[i]) || iswspace(input[i])))
+            {
+                return false;
+            }
+        }
+        return true;
     }
     int toss()
     {
